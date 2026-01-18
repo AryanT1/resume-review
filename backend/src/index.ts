@@ -9,6 +9,8 @@ const prisma = new PrismaClient();
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const corsOption={
   origin: ["process.env.CORS_URL"],
@@ -16,6 +18,7 @@ const corsOption={
   credentials: true
 
 }
+const PORT = process.env.PORT || 3000
 
 app.use(cors(corsOption))
 
@@ -23,7 +26,7 @@ const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   apiKey: process.env.API_KEY,
 });
-app.post("/review", upload.single("resume"), async (req, res) => {
+app.post("/api/review", upload.single("resume"), async (req, res) => {
   const buffer = req.file?.buffer;
 if (!buffer) {
   return res.status(400).json({ error: "No file uploaded" });
@@ -39,9 +42,8 @@ const extracted = await extractText(uint8Array);
     messages: [{ role: "user", content: Promt }],
   });
   const feedback = response.choices[0]?.message.content ?? "";
-  console.log(feedback);
 
   res.json({ feedback });
 });
 
-app.listen(3055, () => console.log("API running on port 3055"));
+app.listen(PORT, () => console.log(`API running on port ${PORT} `));

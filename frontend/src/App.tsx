@@ -53,7 +53,7 @@ const App = () => {
     formData.append("resume", file);
 
     try {
-      const response = await fetch("http://localhost:3055/review", {
+      const response = await fetch("/api/review", {
         method: "POST",
         body: formData,
       });
