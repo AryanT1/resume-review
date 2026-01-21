@@ -64,9 +64,11 @@ const App = () => {
 
       const data = await response.json();
       setFeedback(data.feedback);
-    } catch (err: any) {
-      setError(err.message || "Unexpected error");
-    } finally {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Unknown error occurred";
+      setError(message);
+    }
+     finally {
       setLoading(false);
     }
   };
