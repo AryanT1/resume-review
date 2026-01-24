@@ -4,8 +4,6 @@ import cors from "cors"
 import multer from "multer";
 const upload = multer();
 import { extractText } from "unpdf";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
