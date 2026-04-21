@@ -1,4 +1,4 @@
-# 📄 AI-Powered Resume Reviewer Backend
+# 📄 AI-Powered Resume Reviewer 
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-resume--review.aryanthakur.info-blue?style=for-the-badge&logo=vercel)](https://resume-review.aryanthakur.info/)
 [![Backend](https://img.shields.io/badge/Backend-Node.js%20%7C%20TypeScript-339933?style=for-the-badge&logo=nodedotjs)](https://github.com/AryanT1/resume-review/tree/main/backend)
