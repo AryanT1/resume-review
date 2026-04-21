@@ -42,7 +42,7 @@ The system follows a clear, three-step process to deliver the resume review:
 ## 🌐 Live Demo
 
 Experience the application live:
-[**resume-review.aryanthakur.info**](https://resume-review.aryanthakur.info/)
+[**resume-review.aryanthakur.info**](https://resume-review.aryanthakur.info/) (Sorry, site is under maintaines)
 
 ## 🚀 Getting Started
 
